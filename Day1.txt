@@ -1,0 +1,28 @@
+1、实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn）。
+test_data(2,-2)
+function [result] = test_data(a,b)
+result=power(a,b);
+end
+2、给你两个二进制字符串，返回它们的和（用二进制表示）。输入为 非空 字符串且只包含数字 1 和 0。
+test_data(1010,1011)
+function [result]=test_data(a,b)
+a=num2str(a);
+b=num2str(b);
+result=dec2bin(bin2dec(a)+bin2dec(b));
+end
+3、给出集合 [1,2,3,...,n]，其所有元素共有 n! 种排列。
+按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下：
+"123"
+"132"
+"213"
+"231"
+"312"
+"321"
+给定 n 和 k，返回第 k 个排列。
+test_data(4,9)
+function [result,c,d]=test_data(n,k)
+c=1:n;
+d=perms(c);
+d=sortrows(d,1:n);
+result=d(k,:);
+end
